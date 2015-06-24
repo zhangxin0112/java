@@ -1,0 +1,12 @@
+public class HDFSUtil{
+	FileSystem fs=null;
+	if(fs==null){
+		fs = HDFSClient.getFileSystem();
+	}
+	public void delFile(String url){
+		Path path = new Path(url);
+		if(fs.exists(path)||fs.isFile(path)){
+			fs.delete(path,true);
+		}
+	}
+}
