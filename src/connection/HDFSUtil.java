@@ -5,6 +5,11 @@ import java.io.IOException;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 
+/**
+ * @author dell
+ *注意避免同一个jvm里面同时开多个线程调用filesystem(用filesystem.get方法)
+ *可设置成单例的模式。然后互相传递着用这个对象。
+ */
 public class HDFSUtil {
 	private static FileSystem filesystem = null;
 	
