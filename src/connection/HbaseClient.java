@@ -20,15 +20,19 @@ public class HbaseClient {
 		    configuration.set("hbase.master", "192.168.0.11"); 
 		}
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+			throws MasterNotRunningException, ZooKeeperConnectionException, IOException {
 		HbaseClient hbaseClient =  new HbaseClient();
 		hbaseClient.createTable("test_zx");
 	}
-	public void createTable(String tableName){
-		
+	public void createTable(String tableName) 
+			throws MasterNotRunningException, ZooKeeperConnectionException, IOException{
+		HBaseAdmin hBaseAdmin;
+			hBaseAdmin = new HBaseAdmin(configuration);
+	
 		 System.out.println("start create table ......"); 
 	        try { 
-	            HBaseAdmin hBaseAdmin = new HBaseAdmin(configuration); 
+	             
 	            if (hBaseAdmin.tableExists(tableName)) {
 	            	// 如果存在要创建的表，那么先删除，再创建 
 	                hBaseAdmin.disableTable(tableName); 
@@ -47,7 +51,14 @@ public class HbaseClient {
 	            e.printStackTrace(); 
 	        } catch (IOException e) { 
 	            e.printStackTrace(); 
-	        } 
+	        } finally{
+	        	try {
+					hBaseAdmin.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}	
+	        }
 	        System.out.println("end create table ......"); 
 	}
 }
