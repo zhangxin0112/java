@@ -29,7 +29,8 @@ public class HbaseClient {
 		 System.out.println("start create table ......"); 
 	        try { 
 	            HBaseAdmin hBaseAdmin = new HBaseAdmin(configuration); 
-	            if (hBaseAdmin.tableExists(tableName)) {// 如果存在要创建的表，那么先删除，再创建 
+	            if (hBaseAdmin.tableExists(tableName)) {
+	            	// 如果存在要创建的表，那么先删除，再创建 
 	                hBaseAdmin.disableTable(tableName); 
 	                hBaseAdmin.deleteTable(tableName); 
 	                System.out.println(tableName + " 已经存在这个表了！！！！那就先离线表。然后删除表。。"); 
