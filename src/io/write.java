@@ -10,12 +10,12 @@ public class write {
 		PrintWriter pwr = null;
 		try {
 			pwr = new PrintWriter(
-				new OutputStreamWriter(
+				new OutputStreamWriter(//处理字节流和字符流之间的转换
 					new BufferedOutputStream(
 						new FileOutputStream("e://b.txt"))));
 			pwr.println(str);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}finally{
 			pwr.close();
 		}

@@ -8,11 +8,11 @@ import java.io.InputStreamReader;
 public class read {
 	public static void read(String str){
 		BufferedReader bf = null;
-		String strs = new String();
+		String strs = null;
 		StringBuilder strb = new StringBuilder();
 		try {
 			bf = new BufferedReader(
-					new InputStreamReader(
+					new InputStreamReader(//处理字节流和字符流之间的转换
 							new BufferedInputStream(
 									new FileInputStream(
 											str))));
@@ -21,7 +21,7 @@ public class read {
 			}
 			System.out.println();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 }
