@@ -1,0 +1,480 @@
+Spark Command: /usr/java/jdk1.8.0_66/bin/java -cp /opt/spark/spark-2.3.0-SNAPSHOT-bin-custom-spark/conf/:/opt/spark/spark-2.3.0-SNAPSHOT-bin-custom-spark/jars/*:/etc/hadoop/conf/ -Xmx1g -Dhdp.version=2.6.0-cdh5.7.0 org.apache.spark.deploy.SparkSubmit --class org.apache.spark.sql.hive.thriftserver.HiveThriftServer2 --name Thrift JDBC/ODBC Server spark-internal
+========================================
+17/11/01 19:08:30 INFO HiveThriftServer2: Started daemon with process name: 5652@node3
+17/11/01 19:08:30 INFO SignalUtils: Registered signal handler for TERM
+17/11/01 19:08:30 INFO SignalUtils: Registered signal handler for HUP
+17/11/01 19:08:30 INFO SignalUtils: Registered signal handler for INT
+17/11/01 19:08:30 INFO HiveThriftServer2: Starting SparkContext
+17/11/01 19:08:30 INFO SparkContext: Running Spark version 2.3.0-SNAPSHOT
+17/11/01 19:08:30 INFO SparkContext: Submitted application: Thrift JDBC/ODBC Server
+17/11/01 19:08:30 INFO SecurityManager: Changing view acls to: root
+17/11/01 19:08:30 INFO SecurityManager: Changing modify acls to: root
+17/11/01 19:08:30 INFO SecurityManager: Changing view acls groups to: 
+17/11/01 19:08:30 INFO SecurityManager: Changing modify acls groups to: 
+17/11/01 19:08:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+17/11/01 19:08:30 INFO Utils: Successfully started service 'sparkDriver' on port 37638.
+17/11/01 19:08:30 INFO SparkEnv: Registering MapOutputTracker
+17/11/01 19:08:30 INFO SparkEnv: Registering BlockManagerMaster
+17/11/01 19:08:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/11/01 19:08:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/11/01 19:08:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-fcf30723-0af6-4768-b8b6-791121ff7dd2
+17/11/01 19:08:30 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+17/11/01 19:08:31 INFO SparkEnv: Registering OutputCommitCoordinator
+17/11/01 19:08:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/11/01 19:08:31 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://node3:4040
+17/11/01 19:08:31 INFO Executor: Starting executor ID driver on host localhost
+17/11/01 19:08:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43173.
+17/11/01 19:08:31 INFO NettyBlockTransferService: Server created on node3:43173
+17/11/01 19:08:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/11/01 19:08:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node3, 43173, None)
+17/11/01 19:08:31 INFO BlockManagerMasterEndpoint: Registering block manager node3:43173 with 366.3 MB RAM, BlockManagerId(driver, node3, 43173, None)
+17/11/01 19:08:31 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node3, 43173, None)
+17/11/01 19:08:31 INFO BlockManager: external shuffle service port = 7337
+17/11/01 19:08:31 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node3, 43173, None)
+17/11/01 19:08:32 INFO EventLoggingListener: Logging events to hdfs://ns/var/sparkonyarnlogs/local-1509534511346.snappy
+17/11/01 19:08:32 INFO SharedState: loading hive config file: file:/opt/spark/spark-2.3.0-SNAPSHOT-bin-custom-spark/conf/hive-site.xml
+17/11/01 19:08:32 INFO SharedState: spark.sql.warehouse.dir is not set, but hive.metastore.warehouse.dir is set. Setting spark.sql.warehouse.dir to the value of hive.metastore.warehouse.dir ('/user/hive/warehouse').
+17/11/01 19:08:32 INFO SharedState: Warehouse path is '/user/hive/warehouse'.
+17/11/01 19:08:32 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/11/01 19:08:32 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:08:33 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:08:33 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/11/01 19:08:33 INFO ObjectStore: ObjectStore, initialize called
+17/11/01 19:08:33 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/11/01 19:08:33 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/11/01 19:08:34 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:08:34 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/11/01 19:08:35 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:35 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:36 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:36 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:36 INFO Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+17/11/01 19:08:36 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
+17/11/01 19:08:36 INFO ObjectStore: Initialized ObjectStore
+17/11/01 19:08:37 INFO HiveMetaStore: Added admin role in metastore
+17/11/01 19:08:37 INFO HiveMetaStore: Added public role in metastore
+17/11/01 19:08:37 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/11/01 19:08:37 INFO HiveMetaStore: 0: get_all_databases
+17/11/01 19:08:37 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_all_databases	
+17/11/01 19:08:37 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/11/01 19:08:37 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/11/01 19:08:37 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:38 INFO SessionState: Created local directory: /tmp/hive/java/677b2b2a-be32-4f69-95ec-c688e617a629_resources
+17/11/01 19:08:38 INFO SessionState: Created HDFS directory: /tmp/hive/root/677b2b2a-be32-4f69-95ec-c688e617a629
+17/11/01 19:08:38 INFO SessionState: Created local directory: /tmp/hive/java/root/677b2b2a-be32-4f69-95ec-c688e617a629
+17/11/01 19:08:38 INFO SessionState: Created HDFS directory: /tmp/hive/root/677b2b2a-be32-4f69-95ec-c688e617a629/_tmp_space.db
+17/11/01 19:08:38 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.2) is /user/hive/warehouse
+17/11/01 19:08:38 INFO HiveMetaStore: 0: get_database: default
+17/11/01 19:08:38 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:08:38 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:08:38 INFO SessionState: Created local directory: /tmp/hive/java/8614b504-f7e5-4de0-a39e-284914237367_resources
+17/11/01 19:08:38 INFO SessionState: Created HDFS directory: /tmp/hive/root/8614b504-f7e5-4de0-a39e-284914237367
+17/11/01 19:08:38 INFO SessionState: Created local directory: /tmp/hive/java/root/8614b504-f7e5-4de0-a39e-284914237367
+17/11/01 19:08:38 INFO SessionState: Created HDFS directory: /tmp/hive/root/8614b504-f7e5-4de0-a39e-284914237367/_tmp_space.db
+17/11/01 19:08:38 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.2) is /user/hive/warehouse
+17/11/01 19:08:39 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+17/11/01 19:08:39 INFO HiveUtils: Initializing execution hive, version 1.2.1
+17/11/01 19:08:39 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:08:39 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/11/01 19:08:39 INFO ObjectStore: ObjectStore, initialize called
+17/11/01 19:08:39 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/11/01 19:08:39 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/11/01 19:08:41 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:08:41 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/11/01 19:08:42 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:42 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:43 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:43 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:43 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/11/01 19:08:43 INFO ObjectStore: Initialized ObjectStore
+17/11/01 19:08:43 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/11/01 19:08:43 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/11/01 19:08:43 INFO HiveMetaStore: Added admin role in metastore
+17/11/01 19:08:43 INFO HiveMetaStore: Added public role in metastore
+17/11/01 19:08:43 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/11/01 19:08:44 INFO HiveMetaStore: 0: get_all_databases
+17/11/01 19:08:44 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_all_databases	
+17/11/01 19:08:44 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/11/01 19:08:44 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/11/01 19:08:44 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/11/01 19:08:44 INFO SessionState: Created local directory: /tmp/hive/java/76533776-0d49-46a0-835e-85347af8055c_resources
+17/11/01 19:08:44 INFO SessionState: Created HDFS directory: /tmp/hive/root/76533776-0d49-46a0-835e-85347af8055c
+17/11/01 19:08:44 INFO SessionState: Created local directory: /tmp/hive/java/root/76533776-0d49-46a0-835e-85347af8055c
+17/11/01 19:08:44 INFO SessionState: Created HDFS directory: /tmp/hive/root/76533776-0d49-46a0-835e-85347af8055c/_tmp_space.db
+17/11/01 19:08:44 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.2) is /user/hive/warehouse
+17/11/01 19:08:44 INFO SessionManager: Operation log root directory is created: /tmp/hive/java/root/operation_logs
+17/11/01 19:08:44 INFO AbstractService: HiveServer2: Async execution pool size 100
+17/11/01 19:08:44 INFO AbstractService: Service:OperationManager is inited.
+17/11/01 19:08:44 INFO AbstractService: Service: SessionManager is inited.
+17/11/01 19:08:44 INFO AbstractService: Service: CLIService is inited.
+17/11/01 19:08:44 INFO AbstractService: Service:ThriftBinaryCLIService is inited.
+17/11/01 19:08:44 INFO AbstractService: Service: HiveServer2 is inited.
+17/11/01 19:08:44 INFO AbstractService: Service:OperationManager is started.
+17/11/01 19:08:44 INFO AbstractService: Service:SessionManager is started.
+17/11/01 19:08:44 INFO AbstractService: Service:CLIService is started.
+17/11/01 19:08:44 INFO ObjectStore: ObjectStore, initialize called
+17/11/01 19:08:44 INFO Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+17/11/01 19:08:44 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/11/01 19:08:44 INFO ObjectStore: Initialized ObjectStore
+17/11/01 19:08:44 INFO HiveMetaStore: 0: get_databases: default
+17/11/01 19:08:44 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_databases: default	
+17/11/01 19:08:44 INFO HiveMetaStore: 0: Shutting down the object store...
+17/11/01 19:08:44 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+17/11/01 19:08:44 INFO HiveMetaStore: 0: Metastore shutdown complete.
+17/11/01 19:08:44 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+17/11/01 19:08:44 INFO AbstractService: Service:ThriftBinaryCLIService is started.
+17/11/01 19:08:44 INFO AbstractService: Service:HiveServer2 is started.
+17/11/01 19:08:44 INFO HiveThriftServer2: HiveThriftServer2 started
+17/11/01 19:08:44 INFO ThriftCLIService: Starting ThriftBinaryCLIService on port 10000 with 5...500 worker threads
+17/11/01 19:08:54 INFO ThriftCLIService: Client protocol version: HIVE_CLI_SERVICE_PROTOCOL_V8
+17/11/01 19:08:54 INFO SessionState: Created local directory: /tmp/hive/java/e341c477-b665-4316-b528-d0c8f868ba76_resources
+17/11/01 19:08:54 INFO SessionState: Created HDFS directory: /tmp/hive/root/e341c477-b665-4316-b528-d0c8f868ba76
+17/11/01 19:08:54 INFO SessionState: Created local directory: /tmp/hive/java/root/e341c477-b665-4316-b528-d0c8f868ba76
+17/11/01 19:08:54 INFO SessionState: Created HDFS directory: /tmp/hive/root/e341c477-b665-4316-b528-d0c8f868ba76/_tmp_space.db
+17/11/01 19:08:54 INFO HiveSessionImpl: Operation log session directory is created: /tmp/hive/java/root/operation_logs/e341c477-b665-4316-b528-d0c8f868ba76
+17/11/01 19:08:55 INFO HiveMetaStore: 1: get_database: global_temp
+17/11/01 19:08:55 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: global_temp	
+17/11/01 19:08:55 INFO HiveMetaStore: 1: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/11/01 19:08:55 INFO ObjectStore: ObjectStore, initialize called
+17/11/01 19:08:55 INFO Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+17/11/01 19:08:55 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
+17/11/01 19:08:55 INFO ObjectStore: Initialized ObjectStore
+17/11/01 19:08:55 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+17/11/01 19:08:55 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:08:55 INFO SessionState: Created local directory: /tmp/hive/java/ef1ca074-13b7-468d-983f-14a62b1a31da_resources
+17/11/01 19:08:55 INFO SessionState: Created HDFS directory: /tmp/hive/root/ef1ca074-13b7-468d-983f-14a62b1a31da
+17/11/01 19:08:55 INFO SessionState: Created local directory: /tmp/hive/java/root/ef1ca074-13b7-468d-983f-14a62b1a31da
+17/11/01 19:08:55 INFO SessionState: Created HDFS directory: /tmp/hive/root/ef1ca074-13b7-468d-983f-14a62b1a31da/_tmp_space.db
+17/11/01 19:08:55 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.2) is /user/hive/warehouse
+17/11/01 19:08:57 INFO HiveMetaStore: 1: get_database: default
+17/11/01 19:08:57 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:00 INFO SparkExecuteStatementOperation: Running query 'insert overwrite table default.test_e partition(pt="1") select count(1) from default.test_f' with df450cd0-9385-47e2-bf04-3630aa3bd201
+17/11/01 19:09:00 INFO HiveMetaStore: 2: get_database: default
+17/11/01 19:09:00 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:00 INFO HiveMetaStore: 2: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/11/01 19:09:00 INFO ObjectStore: ObjectStore, initialize called
+17/11/01 19:09:00 INFO Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+17/11/01 19:09:00 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
+17/11/01 19:09:00 INFO ObjectStore: Initialized ObjectStore
+17/11/01 19:09:00 INFO HiveMetaStore: 2: get_database: default
+17/11/01 19:09:00 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:00 INFO HiveMetaStore: 2: get_table : db=default tbl=test_f
+17/11/01 19:09:00 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:00 INFO HiveMetaStore: 2: get_table : db=default tbl=test_f
+17/11/01 19:09:00 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:01 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:01 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:01 INFO FileUtils: Creating directory if it doesn't exist: hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-01_305_1356180444075499289-1
+17/11/01 19:09:01 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:01 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:01 INFO FileSourceStrategy: Pruning directories with: 
+17/11/01 19:09:01 INFO FileSourceStrategy: Post-Scan Filters: 
+17/11/01 19:09:01 INFO FileSourceStrategy: Output Data Schema: struct<>
+17/11/01 19:09:01 INFO FileSourceScanExec: Pushed Filters: 
+17/11/01 19:09:01 INFO HiveMetaStore: 2: get_database: default
+17/11/01 19:09:01 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:01 INFO HiveMetaStore: 2: get_table : db=default tbl=test_f
+17/11/01 19:09:01 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:01 INFO HiveMetaStore: 2: get_table : db=default tbl=test_f
+17/11/01 19:09:01 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:01 INFO HiveMetaStore: 2: get_partitions : db=default tbl=test_f
+17/11/01 19:09:01 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_partitions : db=default tbl=test_f	
+17/11/01 19:09:01 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+17/11/01 19:09:02 INFO ContextCleaner: Cleaned accumulator 8
+17/11/01 19:09:02 INFO CodeGenerator: Code generated in 276.028006 ms
+17/11/01 19:09:02 INFO CodeGenerator: Code generated in 25.338412 ms
+17/11/01 19:09:02 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 412.9 KB, free 365.9 MB)
+17/11/01 19:09:02 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 42.0 KB, free 365.9 MB)
+17/11/01 19:09:02 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on node3:43173 (size: 42.0 KB, free: 366.3 MB)
+17/11/01 19:09:02 INFO SparkContext: Created broadcast 0 from run at AccessController.java:0
+17/11/01 19:09:02 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+17/11/01 19:09:02 INFO SparkContext: Starting job: run at AccessController.java:0
+17/11/01 19:09:02 INFO DAGScheduler: Registering RDD 2 (run at AccessController.java:0)
+17/11/01 19:09:02 INFO DAGScheduler: Got job 0 (run at AccessController.java:0) with 1 output partitions
+17/11/01 19:09:02 INFO DAGScheduler: Final stage: ResultStage 1 (run at AccessController.java:0)
+17/11/01 19:09:02 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+17/11/01 19:09:02 INFO DAGScheduler: Missing parents: List()
+17/11/01 19:09:02 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[4] at run at AccessController.java:0), which has no missing parents
+17/11/01 19:09:03 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 404.8 KB, free 365.5 MB)
+17/11/01 19:09:03 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 131.3 KB, free 365.3 MB)
+17/11/01 19:09:03 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on node3:43173 (size: 131.3 KB, free: 366.1 MB)
+17/11/01 19:09:03 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1029
+17/11/01 19:09:03 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[4] at run at AccessController.java:0) (first 15 tasks are for partitions Vector(0))
+17/11/01 19:09:03 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks
+17/11/01 19:09:03 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7754 bytes)
+17/11/01 19:09:03 INFO Executor: Running task 0.0 in stage 1.0 (TID 0)
+17/11/01 19:09:03 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 0 blocks
+17/11/01 19:09:03 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 8 ms
+17/11/01 19:09:03 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:03 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+17/11/01 19:09:03 INFO MapredParquetOutputFormat: creating new record writer...org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat@4ffa4423
+17/11/01 19:09:03 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+17/11/01 19:09:03 INFO ParquetRecordWriterWrapper: initialize serde with table properties.
+17/11/01 19:09:03 INFO ParquetRecordWriterWrapper: creating real writer to write at hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-01_305_1356180444075499289-1/-ext-10000/_temporary/0/_temporary/attempt_20171101190903_0001_m_000000_0/part-00000-bc205b5c-e79b-4fe8-b71b-bcb2efcddac5-c000
+17/11/01 19:09:04 INFO ParquetRecordWriterWrapper: real writer: parquet.hadoop.ParquetRecordWriter@3a9a2f4b
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+17/11/01 19:09:04 INFO FileOutputCommitter: Saved output of task 'attempt_20171101190903_0001_m_000000_0' to hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-01_305_1356180444075499289-1/-ext-10000/_temporary/0/task_20171101190903_0001_m_000000
+17/11/01 19:09:04 INFO SparkHadoopMapRedUtil: attempt_20171101190903_0001_m_000000_0: Committed
+17/11/01 19:09:04 INFO Executor: Finished task 0.0 in stage 1.0 (TID 0). 1893 bytes result sent to driver
+17/11/01 19:09:04 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 0) in 1050 ms on localhost (executor driver) (1/1)
+17/11/01 19:09:04 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+17/11/01 19:09:04 INFO DAGScheduler: ResultStage 1 (run at AccessController.java:0) finished in 1.485 s
+17/11/01 19:09:04 INFO DAGScheduler: Job 0 finished: run at AccessController.java:0, took 1.535957 s
+17/11/01 19:09:04 INFO FileFormatWriter: Job null committed.
+17/11/01 19:09:04 INFO FileFormatWriter: Finished processing stats for job null.
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_partition_with_auth : db=default tbl=test_e[1]
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_partition_with_auth : db=default tbl=test_e[1]	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_partition_with_auth : db=default tbl=test_e[1]
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_partition_with_auth : db=default tbl=test_e[1]	
+17/11/01 19:09:04 INFO FileUtils: Creating directory if it doesn't exist: hdfs://ns/user/hive/warehouse/test_e/pt=1
+17/11/01 19:09:04 INFO Hive: Renaming src: hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-01_305_1356180444075499289-1/-ext-10000/part-00000-bc205b5c-e79b-4fe8-b71b-bcb2efcddac5-c000, dest: hdfs://ns/user/hive/warehouse/test_e/pt=1/part-00000-bc205b5c-e79b-4fe8-b71b-bcb2efcddac5-c000, Status:true
+17/11/01 19:09:04 INFO HiveMetaStore: 2: get_partition_with_auth : db=default tbl=test_e[1]
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_partition_with_auth : db=default tbl=test_e[1]	
+17/11/01 19:09:04 INFO HiveMetaStore: 2: alter_partition : db=default tbl=test_e
+17/11/01 19:09:04 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=alter_partition : db=default tbl=test_e	
+17/11/01 19:09:04 INFO HiveMetaStore: New partition values:[1]
+17/11/01 19:09:04 WARN log: Updating partition stats fast for: test_e
+17/11/01 19:09:04 WARN log: Updated size to 209
+17/11/01 19:09:05 INFO HiveMetaStore: 2: get_table : db=default tbl=test_e
+17/11/01 19:09:05 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:05 INFO CodeGenerator: Code generated in 20.385592 ms
+17/11/01 19:09:05 INFO DAGScheduler: Asked to cancel job group df450cd0-9385-47e2-bf04-3630aa3bd201
+17/11/01 19:09:13 INFO ThriftCLIService: Client protocol version: HIVE_CLI_SERVICE_PROTOCOL_V8
+17/11/01 19:09:13 INFO SessionState: Created local directory: /tmp/hive/java/e9158157-59c2-4ceb-94c8-d87fe3157013_resources
+17/11/01 19:09:13 INFO SessionState: Created HDFS directory: /tmp/hive/root/e9158157-59c2-4ceb-94c8-d87fe3157013
+17/11/01 19:09:13 INFO SessionState: Created local directory: /tmp/hive/java/root/e9158157-59c2-4ceb-94c8-d87fe3157013
+17/11/01 19:09:13 INFO SessionState: Created HDFS directory: /tmp/hive/root/e9158157-59c2-4ceb-94c8-d87fe3157013/_tmp_space.db
+17/11/01 19:09:13 INFO HiveSessionImpl: Operation log session directory is created: /tmp/hive/java/root/operation_logs/e9158157-59c2-4ceb-94c8-d87fe3157013
+17/11/01 19:09:13 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:13 INFO SessionState: Created local directory: /tmp/hive/java/c41b3221-3bbf-4fb4-9390-a53c879a9454_resources
+17/11/01 19:09:13 INFO SessionState: Created HDFS directory: /tmp/hive/root/c41b3221-3bbf-4fb4-9390-a53c879a9454
+17/11/01 19:09:13 INFO SessionState: Created local directory: /tmp/hive/java/root/c41b3221-3bbf-4fb4-9390-a53c879a9454
+17/11/01 19:09:13 INFO SessionState: Created HDFS directory: /tmp/hive/root/c41b3221-3bbf-4fb4-9390-a53c879a9454/_tmp_space.db
+17/11/01 19:09:13 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.2) is /user/hive/warehouse
+17/11/01 19:09:13 INFO HiveMetaStore: 3: get_database: default
+17/11/01 19:09:13 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:13 INFO HiveMetaStore: 3: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/11/01 19:09:13 INFO ObjectStore: ObjectStore, initialize called
+17/11/01 19:09:13 INFO Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+17/11/01 19:09:13 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
+17/11/01 19:09:13 INFO ObjectStore: Initialized ObjectStore
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 11
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 3
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 5
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 14
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 2
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 18
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 13
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 19
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 7
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 20
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 15
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 10
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 16
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 6
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 0
+17/11/01 19:09:13 INFO BlockManagerInfo: Removed broadcast_0_piece0 on node3:43173 in memory (size: 42.0 KB, free: 366.2 MB)
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned shuffle 0
+17/11/01 19:09:13 INFO BlockManagerInfo: Removed broadcast_1_piece0 on node3:43173 in memory (size: 131.3 KB, free: 366.3 MB)
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 4
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 17
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 9
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 12
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 1
+17/11/01 19:09:13 INFO ContextCleaner: Cleaned accumulator 21
+17/11/01 19:09:15 INFO SparkExecuteStatementOperation: Running query 'insert overwrite table default.test_e partition(pt="1") select count(1) from default.test_f' with dc6079bd-1ed0-4729-ace7-958e43cb71a8
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_database: default
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:15 INFO HiveMetaStore: 4: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/11/01 19:09:15 INFO ObjectStore: ObjectStore, initialize called
+17/11/01 19:09:15 INFO Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+17/11/01 19:09:15 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
+17/11/01 19:09:15 INFO ObjectStore: Initialized ObjectStore
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_database: default
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_table : db=default tbl=test_f
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_table : db=default tbl=test_f
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_table : db=default tbl=test_e
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:15 INFO FileUtils: Creating directory if it doesn't exist: hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-15_651_2065968137682702667-2
+17/11/01 19:09:15 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:15 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:15 INFO FileSourceStrategy: Pruning directories with: 
+17/11/01 19:09:15 INFO FileSourceStrategy: Post-Scan Filters: 
+17/11/01 19:09:15 INFO FileSourceStrategy: Output Data Schema: struct<>
+17/11/01 19:09:15 INFO FileSourceScanExec: Pushed Filters: 
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_database: default
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_table : db=default tbl=test_f
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_table : db=default tbl=test_f
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_f	
+17/11/01 19:09:15 INFO HiveMetaStore: 4: get_partitions : db=default tbl=test_f
+17/11/01 19:09:15 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_partitions : db=default tbl=test_f	
+17/11/01 19:09:15 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:15 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+17/11/01 19:09:15 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 412.9 KB, free 365.9 MB)
+17/11/01 19:09:15 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 42.0 KB, free 365.9 MB)
+17/11/01 19:09:15 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on node3:43173 (size: 42.0 KB, free: 366.3 MB)
+17/11/01 19:09:15 INFO SparkContext: Created broadcast 2 from run at AccessController.java:0
+17/11/01 19:09:15 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+17/11/01 19:09:16 INFO SparkContext: Starting job: run at AccessController.java:0
+17/11/01 19:09:16 INFO DAGScheduler: Registering RDD 7 (run at AccessController.java:0)
+17/11/01 19:09:16 INFO DAGScheduler: Got job 1 (run at AccessController.java:0) with 1 output partitions
+17/11/01 19:09:16 INFO DAGScheduler: Final stage: ResultStage 3 (run at AccessController.java:0)
+17/11/01 19:09:16 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+17/11/01 19:09:16 INFO DAGScheduler: Missing parents: List()
+17/11/01 19:09:16 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[9] at run at AccessController.java:0), which has no missing parents
+17/11/01 19:09:16 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 404.8 KB, free 365.5 MB)
+17/11/01 19:09:16 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 131.3 KB, free 365.3 MB)
+17/11/01 19:09:16 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on node3:43173 (size: 131.3 KB, free: 366.1 MB)
+17/11/01 19:09:16 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1029
+17/11/01 19:09:16 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[9] at run at AccessController.java:0) (first 15 tasks are for partitions Vector(0))
+17/11/01 19:09:16 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks
+17/11/01 19:09:16 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 7754 bytes)
+17/11/01 19:09:16 INFO Executor: Running task 0.0 in stage 3.0 (TID 1)
+17/11/01 19:09:16 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 0 blocks
+17/11/01 19:09:16 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+17/11/01 19:09:16 WARN JobConf: The variable mapred.child.ulimit is no longer used.
+17/11/01 19:09:16 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+17/11/01 19:09:16 INFO MapredParquetOutputFormat: creating new record writer...org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat@6685e550
+17/11/01 19:09:16 INFO ParquetRecordWriterWrapper: initialize serde with table properties.
+17/11/01 19:09:16 INFO ParquetRecordWriterWrapper: creating real writer to write at hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-15_651_2065968137682702667-2/-ext-10000/_temporary/0/_temporary/attempt_20171101190916_0003_m_000000_0/part-00000-0a0d802c-32a3-443d-b742-74483129f255-c000
+17/11/01 19:09:16 INFO ParquetRecordWriterWrapper: real writer: parquet.hadoop.ParquetRecordWriter@6adf9bfc
+17/11/01 19:09:16 INFO FileOutputCommitter: Saved output of task 'attempt_20171101190916_0003_m_000000_0' to hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-15_651_2065968137682702667-2/-ext-10000/_temporary/0/task_20171101190916_0003_m_000000
+17/11/01 19:09:16 INFO SparkHadoopMapRedUtil: attempt_20171101190916_0003_m_000000_0: Committed
+17/11/01 19:09:16 INFO Executor: Finished task 0.0 in stage 3.0 (TID 1). 1893 bytes result sent to driver
+17/11/01 19:09:16 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 1) in 180 ms on localhost (executor driver) (1/1)
+17/11/01 19:09:16 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+17/11/01 19:09:16 INFO DAGScheduler: ResultStage 3 (run at AccessController.java:0) finished in 0.532 s
+17/11/01 19:09:16 INFO DAGScheduler: Job 1 finished: run at AccessController.java:0, took 0.538416 s
+17/11/01 19:09:16 INFO FileFormatWriter: Job null committed.
+17/11/01 19:09:16 INFO FileFormatWriter: Finished processing stats for job null.
+17/11/01 19:09:16 INFO HiveMetaStore: 4: get_table : db=default tbl=test_e
+17/11/01 19:09:16 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:16 INFO HiveMetaStore: 4: get_partition_with_auth : db=default tbl=test_e[1]
+17/11/01 19:09:16 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_partition_with_auth : db=default tbl=test_e[1]	
+17/11/01 19:09:16 INFO HiveMetaStore: 4: get_table : db=default tbl=test_e
+17/11/01 19:09:16 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:16 INFO HiveMetaStore: 4: get_table : db=default tbl=test_e
+17/11/01 19:09:16 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:17 INFO HiveMetaStore: 4: get_table : db=default tbl=test_e
+17/11/01 19:09:17 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:17 INFO HiveMetaStore: 4: get_table : db=default tbl=test_e
+17/11/01 19:09:17 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:17 INFO HiveMetaStore: 4: get_table : db=default tbl=test_e
+17/11/01 19:09:17 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_table : db=default tbl=test_e	
+17/11/01 19:09:17 INFO HiveMetaStore: 4: get_partition_with_auth : db=default tbl=test_e[1]
+17/11/01 19:09:17 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_partition_with_auth : db=default tbl=test_e[1]	
+17/11/01 19:09:17 INFO FileUtils: Creating directory if it doesn't exist: hdfs://ns/user/hive/warehouse/test_e/pt=1
+17/11/01 19:09:17 ERROR SparkExecuteStatementOperation: Error executing query, currentState RUNNING, 
+org.apache.spark.sql.AnalysisException: org.apache.hadoop.hive.ql.metadata.HiveException: Unable to move source hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-15_651_2065968137682702667-2/-ext-10000/part-00000-0a0d802c-32a3-443d-b742-74483129f255-c000 to destination hdfs://ns/user/hive/warehouse/test_e/pt=1/part-00000-0a0d802c-32a3-443d-b742-74483129f255-c000;
+	at org.apache.spark.sql.hive.HiveExternalCatalog.withClient(HiveExternalCatalog.scala:106)
+	at org.apache.spark.sql.hive.HiveExternalCatalog.loadPartition(HiveExternalCatalog.scala:833)
+	at org.apache.spark.sql.hive.execution.InsertIntoHiveTable.run(InsertIntoHiveTable.scala:216)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:70)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:68)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:79)
+	at org.apache.spark.sql.Dataset$$anonfun$6.apply(Dataset.scala:186)
+	at org.apache.spark.sql.Dataset$$anonfun$6.apply(Dataset.scala:186)
+	at org.apache.spark.sql.Dataset$$anonfun$49.apply(Dataset.scala:3112)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:77)
+	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3111)
+	at org.apache.spark.sql.Dataset.<init>(Dataset.scala:186)
+	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:71)
+	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:638)
+	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:694)
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:231)
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$1$$anon$2.run(SparkExecuteStatementOperation.scala:174)
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$1$$anon$2.run(SparkExecuteStatementOperation.scala:171)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1692)
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$1.run(SparkExecuteStatementOperation.scala:184)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: Unable to move source hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-15_651_2065968137682702667-2/-ext-10000/part-00000-0a0d802c-32a3-443d-b742-74483129f255-c000 to destination hdfs://ns/user/hive/warehouse/test_e/pt=1/part-00000-0a0d802c-32a3-443d-b742-74483129f255-c000
+	at org.apache.hadoop.hive.ql.metadata.Hive.moveFile(Hive.java:2644)
+	at org.apache.hadoop.hive.ql.metadata.Hive.copyFiles(Hive.java:2711)
+	at org.apache.hadoop.hive.ql.metadata.Hive.loadPartition(Hive.java:1403)
+	at org.apache.hadoop.hive.ql.metadata.Hive.loadPartition(Hive.java:1324)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.spark.sql.hive.client.Shim_v0_14.loadPartition(HiveShim.scala:829)
+	at org.apache.spark.sql.hive.client.HiveClientImpl$$anonfun$loadPartition$1.apply$mcV$sp(HiveClientImpl.scala:736)
+	at org.apache.spark.sql.hive.client.HiveClientImpl$$anonfun$loadPartition$1.apply(HiveClientImpl.scala:734)
+	at org.apache.spark.sql.hive.client.HiveClientImpl$$anonfun$loadPartition$1.apply(HiveClientImpl.scala:734)
+	at org.apache.spark.sql.hive.client.HiveClientImpl$$anonfun$withHiveState$1.apply(HiveClientImpl.scala:273)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.liftedTree1$1(HiveClientImpl.scala:211)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.retryLocked(HiveClientImpl.scala:210)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.withHiveState(HiveClientImpl.scala:256)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.loadPartition(HiveClientImpl.scala:734)
+	at org.apache.spark.sql.hive.HiveExternalCatalog$$anonfun$loadPartition$1.apply$mcV$sp(HiveExternalCatalog.scala:845)
+	at org.apache.spark.sql.hive.HiveExternalCatalog$$anonfun$loadPartition$1.apply(HiveExternalCatalog.scala:833)
+	at org.apache.spark.sql.hive.HiveExternalCatalog$$anonfun$loadPartition$1.apply(HiveExternalCatalog.scala:833)
+	at org.apache.spark.sql.hive.HiveExternalCatalog.withClient(HiveExternalCatalog.scala:97)
+	... 26 more
+Caused by: java.io.IOException: Filesystem closed
+	at org.apache.hadoop.hdfs.DFSClient.checkOpen(DFSClient.java:798)
+	at org.apache.hadoop.hdfs.DFSClient.getEZForPath(DFSClient.java:2966)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getEZForPath(DistributedFileSystem.java:1906)
+	at org.apache.hadoop.hdfs.client.HdfsAdmin.getEncryptionZoneForPath(HdfsAdmin.java:262)
+	at org.apache.hadoop.hive.shims.Hadoop23Shims$HdfsEncryptionShim.isPathEncrypted(Hadoop23Shims.java:1221)
+	at org.apache.hadoop.hive.ql.metadata.Hive.moveFile(Hive.java:2607)
+	... 46 more
+17/11/01 19:09:17 ERROR SparkExecuteStatementOperation: Error running hive query: 
+org.apache.hive.service.cli.HiveSQLException: org.apache.spark.sql.AnalysisException: org.apache.hadoop.hive.ql.metadata.HiveException: Unable to move source hdfs://ns/user/hive/warehouse/test_e/.hive-staging_hive_2017-11-01_19-09-15_651_2065968137682702667-2/-ext-10000/part-00000-0a0d802c-32a3-443d-b742-74483129f255-c000 to destination hdfs://ns/user/hive/warehouse/test_e/pt=1/part-00000-0a0d802c-32a3-443d-b742-74483129f255-c000;
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:268)
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$1$$anon$2.run(SparkExecuteStatementOperation.scala:174)
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$1$$anon$2.run(SparkExecuteStatementOperation.scala:171)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1692)
+	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$1.run(SparkExecuteStatementOperation.scala:184)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+17/11/01 19:09:17 INFO DAGScheduler: Asked to cancel job group dc6079bd-1ed0-4729-ace7-958e43cb71a8
+17/11/01 19:09:34 ERROR HiveThriftServer2: RECEIVED SIGNAL TERM
+17/11/01 19:09:34 INFO HiveServer2: Shutting down HiveServer2
+17/11/01 19:09:34 INFO ThriftCLIService: Thrift server has stopped
+17/11/01 19:09:34 INFO AbstractService: Service:ThriftBinaryCLIService is stopped.
+17/11/01 19:09:34 INFO AbstractService: Service:OperationManager is stopped.
+17/11/01 19:09:34 INFO AbstractService: Service:SessionManager is stopped.
+17/11/01 19:09:34 INFO AbstractService: Service:CLIService is stopped.
+17/11/01 19:09:34 INFO AbstractService: Service:HiveServer2 is stopped.
+17/11/01 19:09:34 INFO SparkUI: Stopped Spark web UI at http://node3:4040
+17/11/01 19:09:34 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/11/01 19:09:34 INFO MemoryStore: MemoryStore cleared
+17/11/01 19:09:34 INFO BlockManager: BlockManager stopped
+17/11/01 19:09:34 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/11/01 19:09:34 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/11/01 19:09:34 INFO SparkContext: Successfully stopped SparkContext
+17/11/01 19:09:34 INFO ShutdownHookManager: Shutdown hook called
+17/11/01 19:09:34 INFO ShutdownHookManager: Deleting directory /tmp/spark-3480701b-9c1e-4cbf-ab3d-81cabad89d5e
+17/11/01 19:09:34 INFO ShutdownHookManager: Deleting directory /tmp/spark-cd42f6cf-d475-4a1b-987b-646295b1f7d7
+17/11/01 19:09:34 INFO ShutdownHookManager: Deleting directory /tmp/spark-77e3baeb-30c2-49c9-b69a-a8c4e62a821b
